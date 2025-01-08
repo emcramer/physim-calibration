@@ -1,0 +1,35 @@
+// malignant_epithelial_cells
+malignant_epithelial_cell,oxygen,decreases,necrosis,0,3.75,8,0
+malignant_epithelial_cell,oxygen,increases,cycle entry,0.003333,21.5,4,0
+malignant_epithelial_cell,pressure,decreases,cycle entry,0,1,4,0
+malignant_epithelial_cell,apoptotic,increases,apoptotic_debris secretion,0.017,0.1,10,1
+malignant_epithelial_cell,necrotic,increases,necrotic_debris secretion,0.017,0.1,10,1
+malignant_epithelial_cell,oxygen,decreases,migration speed,0,5,4,0
+malignant_epithelial_cell,damage,increases,apoptosis,0.1,5,8,0
+// 
+// M0_macrophages
+M0_macrophage,necrotic_debris,increases,transform to M1_macrophage,0.05,0.005,4,0
+M0_macrophage,apoptotic_debris,decreases,migration speed,0.1,0.005,4,0
+M0_macrophage,necrotic_debris,decreases,migration speed,0.1,0.005,4,0
+M0_macrophage,volume,decreases,phagocytose apoptotic cell,0,6000,4,0
+M0_macrophage,volume,decreases,phagocytose necrotic cell,0,6000,4,0
+// M1_macrophages 
+// M1_macrophage,oxygen,decreases,transform to M2_macrophage,0.0,5,8,0
+M1_macrophage,oxygen,decreases,transform to M2_macrophage,0.0001,5,8,0
+M1_macrophage,apoptotic_debris,decreases,migration speed,0.1,0.005,4,0
+M1_macrophage,necrotic_debris,decreases,migration speed,0.1,0.005,4,0
+M1_macrophage,volume,decreases,phagocytose apoptotic cell,0.0,6000,4,0
+M1_macrophage,volume,decreases,phagocytose necrotic cell,0.0,6000,4,0
+// M2_macrophages
+M2_macrophage,apoptotic_debris,decreases,migration speed,0.1,0.005,4,0
+M2_macrophage,necrotic_debris,decreases,migration speed,0.1,0.005,4,0
+M2_macrophage,volume,decreases,phagocytose apoptotic cell,0.0,6000,4,0
+M2_macrophage,volume,decreases,phagocytose necrotic cell,0.0,6000,4,0
+// effector cells 
+effector_T_cell,pro-inflammatory_factor,increases,attack malignant_epithelial_cell,0.01,1,4,0
+effector_T_cell,contact with malignant_epithelial_cell,decreases,migration speed,0.01,0.1,10,0
+effector_T_cell,pro-inflammatory_factor,increases,migration speed,1,0.01,4,0
+effector_T_cell,anti-inflammatory_factor,increases,transform to exhausted_T_cell,0.001,0.5,4,0
+// exhausted cells 
+exhausted_T_cell,anti-inflammatory_factor,decreases,migration speed,0.001,0.5,4,0
+exhausted_T_cell,contact with malignant_epithelial_cell,decreases,migration speed,0.01,0.1,10,0

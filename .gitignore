@@ -1,0 +1,5 @@
+misc/*
+output/*
+*.ipynb_checkpoints*
+tabvae/*
+*__pycache__*
